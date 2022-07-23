@@ -19,9 +19,15 @@ export const PostsSlice = createSlice({
                     }
                 }
             }
+        },
+        deletePosts: (state, action) => {
+            state.splice(action.payload, 1);
+        },
+        updatePosts: (state, action) => {
+            state.splice(action.payload, 1);
         }
     }
 });
 export const getAllPosts = (state: { posts: IPosts[] }) => state.posts;
-export const { addPosts } = PostsSlice.actions;
+export const { addPosts, deletePosts } = PostsSlice.actions;
 export default PostsSlice.reducer;
